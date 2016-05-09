@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" ng-app='secreto'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CARTES - Nueva Orden</title>
+    <!-- Hojas de estilos -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../css/mdb.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../css/style.css" rel="stylesheet">
+    <!-- Toast -->
+    <link href="../../css/jquery.toastmessage.css" rel="stylesheet">
+    <!-- Calendario -->
+    <link href="../../css/datepicker.css" rel="stylesheet">
+
+    <link rel='stylesheet' type='text/css'href='../../css/classic.time.css'/>
+
+    <!-- Scripts -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../js/jquery-2.0.0.min.js"></script>
+    <!-- AngularJS -->
+    <script type="text/javascript" src="../../js/angular.min.js"></script>
+    <!-- Script de control -->
+    <script type="text/javascript" src="../../js/app_orden.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <!-- Material Design Bootstrap -->
+    <script type="text/javascript" src="../../js/mdb.js"></script>
+    <!-- Toast -->
+    <script type="text/javascript" src="../../js/jquery.toastmessage.js"></script>
+    <!-- Calendario -->
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js"></script>
+
+    <script type='text/javascript'src='../../js/picker.time.js'></script>
+    <script type="text/javascript" src="../../cordova.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body ng-controller='ordenController' class="full-bg-img">
+    <!--div class="fixed-action-btn" style="bottom: -15px; right: 0px;">
+      <div class="alert alert-danger alertas">
+        <a href="juntas_de_trabajo.html" class="white-text">Todas las Juntas <i class="icon-eye-open"></i></a>
+      </div>
+    </div-->
+    <!-- Intro image -->
+    <div id="config-color"  style="background-color:white;">
+      <div class="verticalcenter text-center black-text">
+        <div class="animated flip">
+          <h4>Nueva Punto de la Orden del Día</h4>
+          <!--h4>{{empresa.nombre}}</h4>
+          <span>Crear Junta de Trabajo</span-->
+          <i id='log-config' class='icon-suitcase large'></i>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div class="fixed-action-btn" style="bottom: -15px; right: 0px;">
+      <div class="alert alert-danger alertas">
+        <!--a href="../juntas/juntas_de_trabajo.html" class="white-text"><i class="icon-mail-reply"></i> Volver a la página anterior</a-->
+        <a href="orden_del_dia.html?id={{junta._id}}" class="white-text"><i class="icon-eye-open"></i> Ver toda la Orden del Dia</a>
+      </div>
+    </div>
+    <!-- Contenido -->
+    <section> 
+        <div class="container">
+          <div class="space-30"></div>
+          <div class="space-30"></div>
+          <div class="card-panel">
+            <!--a href="../inicio.html"><i class="icon-home"></i> Ir a Inicio</a-->
+            <a href="../juntas/juntas_de_trabajo.html"><i class="icon-mail-reply"></i> Volver a la página anterior</a>
+            <div class="divider-new black-text">Información del punto de la Orden del día </div>
+            <p>Consecutivo: {{consecutivo}}</p>
+              <!--div class="alert alert-dismissible alert-info small">
+                <i class="icon-eye-open"></i> Despues de Crear una Junta de Trabajo, para crear la Orden del Día de la nueva junta o de otras juntas, vaya a <strong>"Todas las Juntas"</strong>
+              </div-->
+              <form class="form-horizontal" role="form" ng-submit="nuevaOrden()">
+                <div class="row">
+                    <div class="input-field">
+                      <i class="icon-briefcase prefix"></i>
+                      <label for="num"  class="center-align grey-text">Consecutivo</label>
+                      <input id="num" ng-model="ordenN.ORDCON" autocomplete='off' autofocus="on" type="number" min="1" required>
+                    </div>
+                    <div class="input-field">
+                      <i class="icon-pencil prefix"></i>
+                      <label for="motivo" class="center-align grey-text">Descripción del punto de la Orden del Día</label>
+                      <textarea id="motivo" class="materialize-textarea" ng-model="ordenN.ORDDES" required></textarea>
+                      <!--input autocomplete='off' id="motivo" ng-model="juntaN.JUNMOT" type="text" required-->
+                    </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary waves-effect waves-light">Crear punto de la Orden del Día</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!--/. Intro image -->
+</body>
+<script type="text/javascript">
+    $.datetimepicker.setLocale('es');
+    $('#hora').datetimepicker({
+      datepicker:false,
+      format:'H:i',
+      step:60
+    });
+
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+</script>
+</html>

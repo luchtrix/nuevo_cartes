@@ -246,13 +246,13 @@ app.controller('empleadoController', ['$scope', '$http', 'fileUpload', function(
     }
 
     $scope.entregable = function() {
-        alert("entregable "+$scope.tarea.TARSTA)
+        //alert("entregable "+$scope.tarea.TARSTA)
         var tarea = $scope.tarea
         tarea.id = tarea._id; // Pasamos la _id a id para mayor comodidad del lado del servidor a manejar el dato.
         delete tarea._id
         tarea.TARSTA = 'V';
         tarea.TARES1 = '';
-        alert("entregable --> "+tarea.TARSTA)
+        //alert("entregable --> "+tarea.TARSTA)
         $http.put(url_server+"tarea/actualizar", tarea).success(function(response) {
             socket.emit("cambio_status", tarea.TARSUP)
             var notification = document.querySelector('.mdl-js-snackbar');

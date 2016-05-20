@@ -132,10 +132,11 @@
                 <!--Card Reveal-->
                 <div class="card-panel">
                     <div ng-if="junta.JUNSTA == 'O'" class="alert alert-info center">
-                        <h6><strong><i class="fa fa-check-square-o"></i> Verificar Acuerdos y Cerrar Junta</strong></h6>
+                        <h6><strong><i class="fa fa-check-square-o"></i> Enviar Acuerdos y Cerrar Junta</strong></h6>
                     </div>
                     <div ng-if="junta.JUNSTA == 'A'" class="alert alert-success center">
                         <h6><strong><i class="fa fa-folder-open"></i> Reporte de los Acuerdos por Puntos de la Orden del Día</strong></h6>
+                        <b style="font-size:8pt;">- Verifique el estatus de cada Acuerdo para ver la progresión del mismo.</b>
                     </div>
                     <span class="card-title grey-text text-darken-4" style="font-size:13pt;">Junta: <b>{{junta.JUNNUM}}</b> <b class="right">{{junta.JUNFEC}}</b></span><br><br>
                     <div class="panel-group" id="accordion">
@@ -159,12 +160,13 @@
                                                 <i ng-if="a.ACUSTA == 'P'" class='circle green teal-text text-darken-1'></i>
                                                 <i ng-if="a.ACUSTA == 'T'" class='circle blue teal-text text-darken-1'></i>
                                                 <p>{{orden.ORDCON}}.{{a.ACUCON}}._ {{a.ACUDES}}<br>
-                                                - Presupuesto: ${{a.ACUPRE}}<br>
-                                                - Fecha Limite: {{a.ACUTIM}}<br>
+                                                <b>Presupuesto:</b> ${{a.ACUPRE}}<br>
+                                                <b>Fecha Limite:</b> {{a.ACUTIM}}<br>
                                                 <!--Encargado: {{a.ACUEMP}}<br-->
                                                 <div ng-repeat="d in directivos">
-                                                    <b ng-if="d._id == a.ACUEMP">Encargado(a):{{d.EMPNOM}}</b>
+                                                    <b ng-if="d._id == a.ACUEMP">Encargado(a):<br>{{d.EMPNOM}}</b>
                                                 </div>
+                                                <hr>
                                                 <b ng-if="a.ACUSTA == 'A'" >Status: Acordados y Enviados</b>
                                                 <b ng-if="a.ACUSTA == 'P'" >Status: En Progreso</b>
                                                 <b ng-if="a.ACUSTA == 'T'" >Status: Terminado en Tiempo</b>
@@ -184,7 +186,8 @@
                     </div>
                     <!--a href="#" id="open_Modal" class="btn btn-primary waves-effect waves-light">Enviar Acuerdos y Cerrar Junta</a-->
                     <div ng-if="junta.JUNSTA == 'O'" class="center">
-                        <a href="#" id="open_Modal" class="btn blue btn-primary waves-effect waves-light"><i class="fa fa-share-square"></i> Enviar Acuerdos y Cerrar Junta</a>
+                        <a href="#" id="open_Modal" class="btn blue btn-primary waves-effect waves-light"><i class="fa fa-share-square"></i> Enviar Acuerdos</a>
+                        <b style="font-size:8pt;">Enviar los Acuerdos a los Supervisores y Cerrar la Junta</b>
                     </div>
                     <div id="aviso"></div>
                     <!--div class="alert alert-success" ng-if="junta.JUNSTA == 'A'">
@@ -207,10 +210,10 @@
         <div class="modal-content">
           <div class="row">
             <div class="col s12">
-              <h5 class="grey-text">Confirmar el envío</h5>
+              <h5 class="grey-text">Confirmar el Envío de Acuerdos</h5>
             </div>
           </div>
-          <p>&iquest;Realmente desea Enviar los acuerdos a los encargados y Cerrar la junta?</p>
+          <p>&iquest;Desea Enviar los acuerdos a los Supervisores y Cerrar esta junta?</p>
         </div>
         <div class="modal-footer">
           <a class="mdi-navigation-close modal-action modal-close wavs-effects wavs-green btn-flat">No, Cancelar</a>

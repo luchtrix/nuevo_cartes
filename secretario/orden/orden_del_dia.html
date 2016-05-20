@@ -137,7 +137,7 @@
                             <div class="mask waves-effect activator"></div-->
                         </div>
                     </div>
-                    <a href="#" class='btn blue white-text' id="open_modal"><i class="mdi-editor-mode-edit"></i> Nuevo Punto de la Orden del dia</a>
+                    <a href="#" class='btn btn-floating add-icon indigo' id="open_modal"><i class="mdi-editor-mode-edit"></i> Nuevo</a>
                     <div class="card-content">
                         <!--p ng-repeat="orden in listOrden">
                             {{orden.ORDCON}}._ {{orden.ORDDES}}<br>
@@ -189,13 +189,14 @@
                     </div-->
                     <div class="input-field">
                       <i class="mdi-editor-mode-edit prefix"></i>
-                      <label for="motivo" class="center-align grey-text">Descripción del punto de la Orden del Día</label>
+                      <label for="motivo" class="center-align grey-text">Descripción del punto</label>
                       <textarea id="motivo" class="materialize-textarea" ng-model="ordenN.ORDDES" required></textarea>
                       <!--input autocomplete='off' id="motivo" ng-model="juntaN.JUNMOT" type="text" required-->
                     </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Crear</button>
+                  <button type="submit" class="btn btn-primary">Crear Punto</button><br>
+                  <b style="font-size:8pt;color:grey;"><em>*NOTA:Sea breve en los puntos de la orden del día.</em></b>
                 </div>
               </form>
                 </div>
@@ -217,7 +218,7 @@
         </div>
         <div class="modal-footer">
           <a class="mdi-navigation-close modal-action modal-close wavs-effects wavs-green btn-flat">No, Cancelar</a>
-          <a href="#" class="wavs-effects wavs-green btn-flat" ng-click="deleteOrden(orden._id)"><i class="mdi-action-delete"></i>Si, lo deseo Eliminar</a>
+          <a href="#" class="wavs-effects wavs-green btn-flat" ng-click="deleteOrden(orden._id)"><i class="mdi-action-delete"></i>Si, Eliminar</a>
         </div>
       </div>
 
@@ -232,14 +233,15 @@
                     <!--p>&iquest;Realmente desea eliminar la Junta <b>{{j.JUNNUM}}</b>?</p-->
                     <form class="form-horizontal" role="form" ng-submit="updateOrden(orden)">
                         <div class="row">
-                            <label class="center-align grey-text espacio">Descripción del punto de la Orden del Día</label>
+                            <label class="center-align grey-text espacio">Descripción del punto</label>
                             <div class="input-field">
                                 <i class="mdi-editor-mode-edit prefix"></i>
                                 <textarea class="espacio materialize-textarea" autofocus="on" ng-model="orden.ORDDES" required></textarea>
                             </div>
                         </div>
                         <div class="text-center">
-                          <button type="submit" class="btn btn-primary" data-dismiss="modal">Actualizar punto de la Orden del Día</button>
+                          <button type="submit" class="btn btn-primary" data-dismiss="modal">Actualizar Punto</button><br>
+                          <b style="font-size:8pt;color:grey;"><em>*NOTA:Sea breve en los puntos de la orden del día.</em></b>
                         </div>
                     </form>
                 </div>

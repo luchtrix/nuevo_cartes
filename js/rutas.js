@@ -29,8 +29,7 @@ app.controller('loginController', function($scope, $http){
 			if(!datos.type){
 				$scope.mensaje = datos.data;
 				$("#error").empty();
-				$("#error").append('<div style="color:red;font-weight:bolder;"><strong>Error!...</strong>no esta registrado o ingreso un dato erroneo. Verifique!.</div>');
-				//$("#error").append("<div class='yellow center-align'><i class='mdi-alert-warning'></i> No estas autorizado para ingresar.</div>");
+				$("#error").append('<div class="alert alert-danger"><b>Error de Autenticación!!!</b>.<br>No esta registrado en <b>CARTES</b> o Verifique bien sus datos.</div>');
 			}else{
 				if(typeof(Storage) !== "undefined") {
 					// Alamcenamos la información del usuario
@@ -57,13 +56,13 @@ app.controller('loginController', function($scope, $http){
 						}
 			        }else{
 						$("#error").empty();
-						$("#error").append('<div style="color:red;font-weight:bolder;"><strong>Error!...</strong>no esta registrado o ingreso un dato erroneo. Verifique!.</div>');
+						$("#error").append('<div class="alert alert-danger"><b>Error de Autenticación!!!</b>.<br>No esta registrado en <b>CARTES</b> o Verifique bien sus datos.</div>');
 			        }
 			    });
 			}
 		}).error(function(data, status, headers, config){
 			$("#error").empty();
-			$("#error").append('<div style="color:red;font-weight:bolder;"><strong>Error!...</strong>no esta registrado o ingreso un dato erroneo. Verifique!.</div>');
+			$("#error").append('<div class="alert alert-danger"><b>Error de Autenticación!!!</b>.<br>No esta registrado en <b>CARTES</b> o Verifique bien sus datos.</div>');
 		})
 	}
 });

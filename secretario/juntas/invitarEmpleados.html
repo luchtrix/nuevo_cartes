@@ -64,10 +64,7 @@
 </head>
 
 <body ng-controller='invitadosController' class="full-bg-img" onload="onLoad()">
-    <!--div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-      <a href="juntas_de_trabajo.html" class="btn-floating btn-large waves-effect waves-light red"><i class="icon-mail-reply"></i></a>
-    </div-->
-    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <div class="fixed-action-btn" style="bottom: 45px; right: 14px;">
     <a class="btn-floating btn-large red" href="juntas_de_trabajo.html">
       <i class="fa fa-mail-reply"></i>
     </a>
@@ -117,18 +114,17 @@
         <div class="container">
             <div class="space-30"></div>
             <div class="space-30"></div>
-            <div class="col-md-12">
+            <div class="col-md-12" id="contenido">
                 <!--Card Reveal-->
                 <div class="card hoverable">
                     <br>
                     <div ng-if="junta.STATINV == 0">
                         <div class="alert alert-dismissible alert-danger small">
-                            <i class="icon-eye-open"></i>
-                            Importante! Si regresa a la página anterior sin enviar antes la invitación a sus empleados, se perderán los datos que tenia registrado.
+                            <b>- Importante! Si regresa a la página anterior sin enviar antes la invitación a sus empleados, se perderán los datos que tenia registrado.</b>
                         </div>
                         <div class="card-image">
                             <div class="view overlay hm-white-slight z-depth-1">
-                                <p class="titulo"> Seleccionar a los invitados para la junta {{junta.JUNNUM}}</p>
+                                <p class="espacio"> Seleccionar a los invitados para la Junta: <em>{{junta.JUNNUM}}</em></p>
                             </div>
                         </div>
                         <div class="input-field" style="padding: 15px;">
@@ -161,10 +157,10 @@
                     </div>
                     <div ng-if="junta.STATINV == 1">
                         <!--<div class="alert alert-info">Se ha Enviado la invitación</div>-->
-                        <div class="alert alert-info">Se han Enviado las invitaciones <i class="icon-check"></i></div>
+                        <div class="alert alert-info">Se han Enviado las invitaciones <i class="fa fa-thumbs-up"></i></div>
                         <div class="card-image">
                             <div class="view overlay hm-white-slight z-depth-1 text-center">
-                                <h5 class="titulo">La Junta: <em>{{junta.JUNNUM}}</em>, ya cuenta con Invitados.</h5>
+                                <h5 class="espacio">La Junta: <em>{{junta.JUNNUM}}</em>, ya cuenta con Invitados.</h5>
                             </div>
                         </div>
                         <div class="input-field" style="padding: 15px;">
@@ -183,6 +179,12 @@
 
                 </div>
                 <!--/.Card Reveal-->
+            </div>
+            <div class="col-md-12" id="contenido_desfase">
+              <p class="espacio center">La fecha para llevar a cabo la Junta: <b>{{junta.JUNNUM}}</b> es hoy o se ha desfasado en tiempo, y es muy pronto para avisar a sus empleados.
+              Para poder mandarles una invitación es necesario que edita la fecha de esta Junta 
+              <a href="../juntas/junta.html?id={{junta._id}}">Aqui</a>.
+              </p>
             </div>
         </div>
         <!--a href="#" class="btn btn-primary waves-effect waves-light" ng-click="prueba()">Prueba Socket</a-->

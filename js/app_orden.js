@@ -1,6 +1,6 @@
 var app = angular.module('secreto', [])
-//var url_server = 'http://192.168.1.103:8080/';
-var url_server = 'http://159.203.128.165:8080/';
+var url_server = 'http://159.203.128.165/';
+//var url_server = 'http://159.203.128.165:8080/';
 //var url_server = 'http://127.0.0.1:8080/';
 
 //Para cerrar los modales

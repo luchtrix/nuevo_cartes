@@ -26,7 +26,8 @@ var Script = function () {
     var user = localStorage.getItem("usuario")///nuevo
     var usuario = JSON.parse(user);//NUEVO
     var empresa = usuario.EMPIDC;
-    var url_server = 'http://159.203.128.165:8080/'
+    var url_server = 'http://159.203.128.165/'
+    //var url_server = 'http://159.203.128.165:8080/'
     //var url_server = 'http://127.0.0.1:8080/'
     $.ajax({
         method: "GET",
